@@ -1,5 +1,5 @@
 {
     "scripts": {
-        "build-css": "tailwindcss -i ./todoApp/static/styles.css -o ./todoApp/static/styles.css --minify"
+        "build-css": "tailwindcss -i ./todoApp/static/input.css -o ./todoApp/static/styles.css --minify"
     }
 }

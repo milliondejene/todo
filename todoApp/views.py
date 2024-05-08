@@ -1,6 +1,12 @@
-from django.shortcuts import render
+# views.py
+from rest_framework import generics
+from .models import Task
+from .serializers import TaskSerializer
 
-def home(request):
-    return render(request, 'home.html')
-def task_list(request):
-    return render(request, 'task_list.html')
+class TaskListCreateAPIView(generics.ListCreateAPIView):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer
+
+class TaskRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Task.objects.all()
+    serializer_class = TaskSerializer

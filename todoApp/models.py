@@ -10,4 +10,5 @@ class Task(models.Model):
         return self.title
 
     class Meta:
+        db_table = 'task'
         app_label = 'todoApp'  # Replace 'todoApp' with the name of your Django app

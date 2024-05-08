@@ -1,10 +1,8 @@
-from django.contrib import admin
+# urls.py
 from django.urls import path
-from todoApp.views import home, task_list
-
+from todoApp.views import TaskListCreateAPIView, TaskRetrieveUpdateDestroyAPIView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('tasks/', task_list, name='task_list'),
-    path('', home, name='home'),  # Define path for the root URL
+    path('tasks/', TaskListCreateAPIView.as_view(), name='task-list-create'),
+    path('tasks/<int:pk>/', TaskRetrieveUpdateDestroyAPIView.as_view(), name='task-retrieve-update-destroy'),
 ]
